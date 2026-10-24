@@ -1,3 +1,6 @@
+package investmentapp;
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -27,6 +30,9 @@ public class InvestmentReport extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu1 = new javax.swing.JMenu();
+        Tools = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
         name = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         amount = new javax.swing.JLabel();
@@ -37,6 +43,19 @@ public class InvestmentReport extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        mnuMain = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        mnuExit = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        mnuCalculate = new javax.swing.JMenuItem();
+        mnuClear = new javax.swing.JMenuItem();
+
+        jMenu1.setText("jMenu1");
+
+        Tools.setText("jMenu2");
+
+        jMenu2.setText("jMenu2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("INVESTMENT REPORT");
@@ -45,20 +64,46 @@ public class InvestmentReport extends javax.swing.JFrame {
 
         amount.setText("Enter Investment Amount:");
 
+        txtInvestA.setText("$");
         txtInvestA.addActionListener(this::txtInvestAActionPerformed);
 
         jRadioButton1.setText("5 Years");
 
         jRadioButton2.setText("10 Years");
+        jRadioButton2.addActionListener(this::jRadioButton2ActionPerformed);
 
         jRadioButton3.setText("15 Years");
 
         jLabel1.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 14)); // NOI18N
         jLabel1.setText("INVESTMENT REPORT");
 
-        jLabel2.setText("Select Type");
+        jLabel2.setText("Select Type:");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Moderate", "Aggressive" }));
+
+        jLabel3.setText("Select Term:");
+
+        jMenu3.setText("File");
+        jMenu3.addActionListener(this::jMenu3ActionPerformed);
+
+        mnuExit.setText("Exit");
+        mnuExit.addActionListener(this::mnuExitActionPerformed);
+        jMenu3.add(mnuExit);
+
+        mnuMain.add(jMenu3);
+
+        jMenu4.setText("Tools");
+
+        mnuCalculate.setText("Calculate");
+        mnuCalculate.addActionListener(this::mnuCalculateActionPerformed);
+        jMenu4.add(mnuCalculate);
+
+        mnuClear.setText("Clear");
+        jMenu4.add(mnuClear);
+
+        mnuMain.add(jMenu4);
+
+        setJMenuBar(mnuMain);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,12 +116,6 @@ public class InvestmentReport extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jRadioButton1)
-                        .addGap(37, 37, 37)
-                        .addComponent(jRadioButton2)
-                        .addGap(34, 34, 34)
-                        .addComponent(jRadioButton3))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -92,7 +131,15 @@ public class InvestmentReport extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtName)
                             .addComponent(txtInvestA)
-                            .addComponent(jComboBox1, 0, 126, Short.MAX_VALUE))))
+                            .addComponent(jComboBox1, 0, 126, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButton2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButton3)))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -112,21 +159,38 @@ public class InvestmentReport extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButton1)
                     .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3))
-                .addGap(45, 45, 45))
+                    .addComponent(jRadioButton3)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(416, 309));
+        setSize(new java.awt.Dimension(416, 330));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtInvestAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInvestAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtInvestAActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void mnuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuExitActionPerformed
+        
+    }//GEN-LAST:event_mnuExitActionPerformed
+
+    private void mnuCalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCalculateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnuCalculateActionPerformed
+
+    private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,15 +218,75 @@ public class InvestmentReport extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Tools;
     private javax.swing.JLabel amount;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JMenuItem mnuCalculate;
+    private javax.swing.JMenuItem mnuClear;
+    private javax.swing.JMenuItem mnuExit;
+    private javax.swing.JMenuBar mnuMain;
     private javax.swing.JLabel name;
     private javax.swing.JTextField txtInvestA;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
 }
+
+public class Investment{
+    private String customerName;
+    private double amount;
+    private String type;
+    private int term;
+    
+    public Investment(String name, double amt, String type, int term){
+        this.customerName = name;
+        this.amount = amt;
+        this.term = term;
+        this.type = type;
+    }
+    
+
+
+
+//METHOD TO CALCULATE COMPUND INTEREST
+public double calculateFinalAmount(){
+    double interestRate = 0;
+    
+    if (type.equalsIgnoreCase("Moderate")){
+        interestRate = 0.10; //10%
+    } else if (type.equalsIgnoreCase("Aggressive")){
+        interestRate = 0.15; //15%
+    }
+    
+    //Compound interest formula: A = P(1+R)^t
+    double finalAmount = amount* Math.pow((1 +  interestRate), term);
+    return finalAmount;
+    
+}
+
+//generate report
+public String getReport(){
+    //Round the final amount to 2 decimal places for display
+    double finalAmt = calculateFinalAmount();
+    String formattedAmount = String.format("%.2f", finalAmt);
+    
+    String report = "INVESTMENT REPORT\n\n";
+    report+= "CUSTOMER NAME: " + customerName + "\n";
+    report+= "ORIGINAL AMOUNT: $ " + amount + "\n";
+    report+= "YEARS INVESTED: " + term + "\n";
+    report+= "FINAL AMOUNT: $ " + formattedAmount;
+    return report;
+}
+}
+
+
+
