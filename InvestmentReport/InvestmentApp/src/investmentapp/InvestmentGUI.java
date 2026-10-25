@@ -1,5 +1,7 @@
 package investmentapp;
 
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -41,6 +43,7 @@ public class InvestmentGUI extends javax.swing.JFrame {
         rdo5 = new javax.swing.JRadioButton();
         rdo10 = new javax.swing.JRadioButton();
         rdo15 = new javax.swing.JRadioButton();
+        jLabel5 = new javax.swing.JLabel();
         mnuBar = new javax.swing.JMenuBar();
         mnuFile = new javax.swing.JMenu();
         mnuExit = new javax.swing.JMenuItem();
@@ -88,6 +91,10 @@ public class InvestmentGUI extends javax.swing.JFrame {
         btnGroupTerm.add(rdo15);
         rdo15.setText("15 Years");
         getContentPane().add(rdo15, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel5.setText("INVESTMENT REPORT");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
 
         mnuFile.setText("File");
 
@@ -165,6 +172,10 @@ public class InvestmentGUI extends javax.swing.JFrame {
         String report = inv.getReport();
         
         javax.swing.JOptionPane.showMessageDialog(this, report, "Message", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        
+             JOptionPane.showMessageDialog(null,"INVESMENT REPORT\n\n" +  "CUSTOMER NAME: " + txtName + "\nORIGINAL AMOUNT: " + 
+                                                                txtAmount + "\nYEARS INVESTED: " + btnGroupTerm + "\nFINAL AMOUNT: "
+                                                               );
     }//GEN-LAST:event_mnuCalculateActionPerformed
 
     /**
@@ -190,6 +201,10 @@ public class InvestmentGUI extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new InvestmentGUI().setVisible(true));
+        
+   
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -199,6 +214,7 @@ public class InvestmentGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuBar mnuBar;
     private javax.swing.JMenuItem mnuCalculate;
     private javax.swing.JMenuItem mnuClear;
