@@ -19,6 +19,7 @@ public class Investment {
         this.amount = amt;
         this.type = type;
         this.term = term;
+        
     }
     // Method to calculate compound interest
     public double calculateFinalAmount() {
@@ -41,9 +42,9 @@ public class Investment {
         
         String report = "INVESTMENT REPORT\n\n";
         report += "CUSTOMER NAME: " + customerName + "\n";
-        report += "ORIGINAL AMOUNT: R " + amount + "\n";
+        report += "ORIGINAL AMOUNT: $ " + amount + "\n";
         report += "YEARS INVESTED: " + term + "\n";
-        report += "FINAL AMOUNT: R " + formattedAmount;  
+        report += "FINAL AMOUNT: $ " + formattedAmount;  
         return report;
 }
 }

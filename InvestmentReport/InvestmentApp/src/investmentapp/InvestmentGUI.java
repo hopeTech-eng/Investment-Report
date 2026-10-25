@@ -1,6 +1,6 @@
 package investmentapp;
 
-import javax.swing.JOptionPane;
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -64,7 +64,6 @@ public class InvestmentGUI extends javax.swing.JFrame {
         jLabel2.setText("Enter Amount:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 90, 20));
 
-        txtAmount.setText("$");
         txtAmount.addActionListener(this::txtAmountActionPerformed);
         getContentPane().add(txtAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 110, -1));
 
@@ -158,14 +157,18 @@ public class InvestmentGUI extends javax.swing.JFrame {
         String name = txtName.getText();
         double amount = Double.parseDouble(txtAmount.getText());
         String type = cmbType.getSelectedItem().toString();
-        
+     
         int term = 0;
         if(rdo5.isSelected()){
             term = 5;
+  
+            
         }else if (rdo10.isSelected()) {
             term = 10;
+ 
         }else if (rdo15.isSelected()) {
             term = 15;
+            
         }
         
         inv = new Investment(name, amount, type, term);
@@ -173,9 +176,7 @@ public class InvestmentGUI extends javax.swing.JFrame {
         
         javax.swing.JOptionPane.showMessageDialog(this, report, "Message", javax.swing.JOptionPane.INFORMATION_MESSAGE);
         
-             JOptionPane.showMessageDialog(null,"INVESMENT REPORT\n\n" +  "CUSTOMER NAME: " + txtName + "\nORIGINAL AMOUNT: " + 
-                                                                txtAmount + "\nYEARS INVESTED: " + btnGroupTerm + "\nFINAL AMOUNT: "
-                                                               );
+             
     }//GEN-LAST:event_mnuCalculateActionPerformed
 
     /**
